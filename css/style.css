@@ -46,6 +46,10 @@ body {
     height: 35px;
 }
 
+/* .logo:hover {
+    animation: moveInRight 1s ease-out
+} */
+
 .text-box {
     position: absolute;
     top: 40%;
@@ -56,6 +60,9 @@ body {
 .heading-primary {
     color: #fff;
     text-transform: uppercase;
+
+    /* animation fix */
+    backface-visibility: hidden;
 }
 
 .heading-primary-main {
