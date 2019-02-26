@@ -84,6 +84,8 @@ body {
     font-size: 6rem;
     font-weight: 400;
     letter-spacing: 3.5rem;
+    /* fixing the centering issue caused by different letter-spacing */
+    margin-right: -3.5rem;
     /* margin-left: 2px; */
 
     animation-name: moveInLeft;
@@ -98,7 +100,8 @@ body {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.75rem;
-    /* margin-left: 1px; */
+    /* fixing the centering issue caused by different letter-spacing */
+    margin-right: -1.75rem;
     animation: moveInRight 1s ease-out;
 }
 
