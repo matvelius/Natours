@@ -30,16 +30,23 @@
         height: 15rem;
         float: left;
         // must be floated and have height & width for this to work
-        // this determines how the content flows
-        -webkit-shape-outside: circle(50% at 50% 50%);
-        shape-outside: circle(50% at 50% 50%);
-        // make the shape circular
-        -webkit-clip-path: circle(50% at 50% 50%);
-        clip-path: circle(50% at 50% 50%);
+        
         // move the text (BETTER THAN MARGINS or PADDING)
         transform: translateX(-3rem) skewX(12deg);
         // this is set to relative so that the child element caption can be set to absolute
         position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+            // make the shape circular
+            -webkit-clip-path: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+            // this determines how the content flows
+            -webkit-shape-outside: circle(50% at 50% 50%);
+            shape-outside: circle(50% at 50% 50%);
+            border-radius: none;
+        }
 
         @include respond(phone) {
             transform: translateX(-3rem) skewX(0);
