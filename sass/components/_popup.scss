@@ -41,11 +41,27 @@
         opacity: 0;
         transform: translate(-50%, -50%) scale(.25);
         transition: all .4s .2s;
+
+        @include respond(tab-land) {
+            background-image: url("../../img/nat-8.jpg");
+            background-color: rgba(255, 255, 255, 0.88);
+            background-blend-mode: lighten;
+            background-size: cover;
+            width: 90%;
+        }
     }
 
     &__left {
         width: 33.333333%;
         display: table-cell;
+        overflow: hidden;
+        // display: flex;
+        // flex-direction: column;
+        align-items: center;
+
+        @include respond(tab-land) { 
+            display: block;
+        }
     }
 
     &__right {
@@ -53,11 +69,30 @@
         display: table-cell;
         vertical-align: middle;
         padding: 3rem 5rem;
+        @include respond(tab-land) { 
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
     }
 
     &__img {
+        
         display: block;
         width: 100%;
+        height: 20%;
+        
+        @include respond(tab-land) { 
+            width: 0;
+            // position: absolute;
+            // height: 100%;
+            // max-width: 100%;
+            // z-index: 3000;
+            // opacity: .3;
+            // &:last-of-type {
+            //     width: 0;
+            // }
+        }
     }
 
     &__text {
@@ -71,6 +106,12 @@
         column-count: 2;
         column-gap: 4rem;
         column-rule: 1px solid $color-grey-light-2;
+
+        @include respond(tab-land) { 
+            // position: fixed;
+            column-count: 1;
+            z-index: 4000;
+        }
 
         -moz-hyphens: auto;
         -ms-hyphens: auto;
